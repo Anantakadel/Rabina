@@ -26,6 +26,7 @@
             position: relative;
             z-index: 1;
             margin-top: 50px;
+            text-align: center;
         }
 
         h1 {
@@ -41,38 +42,12 @@
             color: #333;
         }
 
-        .cake {
-            position: relative;
-            width: 220px;
-            height: 220px;
-            margin: 20px auto;
-            display: inline-block;
-        }
-
         .cake-img {
             width: 100%;
+            max-width: 300px; /* Added max-width for better responsiveness */
+            height: auto;
             border-radius: 15px;
-        }
-
-        .cake-decoration {
-            position: absolute;
-            background: #fff;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            top: 20px;
-            animation: rotate 5s linear infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-30px); }
-            60% { transform: translateY(-15px); }
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            margin-top: 20px;
         }
 
         button {
@@ -85,7 +60,6 @@
             font-size: 1.2em;
             margin-top: 20px;
             transition: background 0.3s, transform 0.3s;
-            position: relative;
         }
 
         button:hover {
@@ -127,6 +101,12 @@
             animation: confetti 5s infinite;
         }
 
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-30px); }
+            60% { transform: translateY(-15px); }
+        }
+
         @keyframes confetti {
             0% { transform: translateY(-100px) rotate(0); }
             50% { transform: translateY(100vh) rotate(360deg); }
@@ -146,12 +126,11 @@
     <div class="container">
         <h1>Happy Birthday, Rabina!</h1>
         <p class="message"><b>Wishing you a day filled with love, joy, and lots of cake!</b></p>
-      <button onclick="showMessage()">Click for a Special Message</button>
+        <img src="cake.jpg" alt="Birthday Cake" class="cake-img">
+        <button onclick="showMessage()">Click for a Special Message</button>
         <div id="specialMessage" class="hidden">
             <p><b>You are the best sister ever! Enjoy your special day!</b></p>
         </div>
-        <img src="Cake.png" alt="Birthday Cake" class="cake-img">
-        
     </div>
     <script>
         function showMessage() {
